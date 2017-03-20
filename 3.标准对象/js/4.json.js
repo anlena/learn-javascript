@@ -1,7 +1,9 @@
 function success(text) {
     var textarea = document.getElementById('test-response-text');
     // textarea.value = text;
-    console.log(text);
+    var s = JSON.parse(text);
+    console.log(s);
+
 }
 
 function fail(code) {
