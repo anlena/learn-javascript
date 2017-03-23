@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>表单验证</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+        <p id="test-error" style="color: red"></p>
+        <p>
+            用户名：<input type="text" id="user" name="user" value="">
+        </p>
+        <p>
+            口令：<input type="password" id="pass" name="pass" value="">
+        </p>
+        <p>
+            重复口令：<input type="password" id="pass-2" name="pass" value="">
+        </p>
+        <p>
+            <button type="submit">提交</button><button type="reset">重置</button>
+        </p>
+    </form>
+
+
+    <script src="js/7.操作表单.js"></script>
+</body>
+
+</html>
