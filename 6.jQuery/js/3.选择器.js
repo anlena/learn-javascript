@@ -36,3 +36,7 @@ var tr = $('tr.red');
 
 $('p,div');
 $('p.red,p.green');
+
+//练习题
+
+//
