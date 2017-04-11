@@ -15,22 +15,44 @@
         position: relative;
         left: 30%;
     }
+    
+    .box2 {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: relative;
+        top: 120%;
+    }
 </style>
 
 <body>
     <h3> $(selector).stop(stopAll,goToEnd)</h3>
     <div class="box1"></div>
-    <button class="bt1">多属性</button>
-    <button class="bt2">相对值</button>
-    <button class="bt3">预定义值</button>
-    <button class="bt4">使用队列</button>
+    <div class="box2"></div>
+    <button class="bt1">stop</button>
+    <button class="bt2">函数(执行完后)</button>
+    <button class="bt3">结束前</button>
+    <button class="bt4">链语法</button>
+
 
 </body>
 
 <script>
     $(function() {
+        $(".bt2").click(function() {
+            $(".box1").hide('slow', function() {
+                alert("hello")
+            })
+        })
+        $(".bt3").click(function() {
+            $('.box1').hide(1000);
+            alert("hahahh");
+        });
 
-
+        //链式语法
+        $(".bt4").click(function() {
+            $(".box2").css("backgroundColor", "black").slideUp(2000).slideDown(2000);
+        })
     });
 </script>
 

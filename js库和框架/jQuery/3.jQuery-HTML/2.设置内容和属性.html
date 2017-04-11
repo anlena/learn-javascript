@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div>
+        hello,world! <b>哈哈</b>
+    </div>
+    <input type="text" name="" value="你好啊">
+    <a href="hell.com">asd </a>
+
+    <button class="bt1">text</button>
+    <button class="bt2">html</button>
+    <button class="bt3">val</button>
+    <button class="bt4">上面三个的回调函数</button>
+    <button class="bt5">attr</button>
+    <button class="bt6">attr的回调函数</button>
+
+</body>
+
+<script>
+    $(function() {
+
+        //设置next
+        $(".bt1").click(function() {
+            $("div").text("我是");
+        });
+
+        //传入html
+        $(".bt2").click(function() {
+            $("div").html("<b>哈哈哈</b>")
+        });
+
+        //更改value
+        $(".bt3").click(function() {
+            $("input").val("miss you ");
+        });
+
+        //三个方法的回调函数
+        $(".bt4").click(function() {
+            $("div").text(function(i, oldText) {
+                return "old text:" + oldText + "new text:Hello world (index: " + i + ")";
+            })
+        });
+
+        //设置attr
+        $(".bt5").click(function() {
+            $("a").attr("href", "http://www.baidu.com");
+        });
+
+        //attr的回调函数
+        $(".bt6").click(function() {
+            $("a").attr("href", function(i, origValue) {
+                return origValue + "/jquery";
+            });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div>
+        hello,world! <b>哈哈</b>
+    </div>
+    <input type="text" name="" value="你好啊">
+    <a href="hell.com"></a>
+
+    <button class="bt1">text</button>
+    <button class="bt2">html</button>
+    <button class="bt3">val</button>
+    <button class="bt4">attr</button>
+</body>
+
+<script>
+    $(function() {
+
+        //获取text
+        $(".bt1").click(function() {
+            alert("Text:" + $("div").text());
+        });
+
+        //获取html(包括里面的标签)
+        $(".bt2").click(function() {
+            alert("HTML:" + $("div").html());
+        });
+
+        //获取表单输入的值
+        $(".bt3").click(function() {
+            alert("VAL:" + $("input").val());
+        });
+
+        //获取属性的值
+        $(".bt4").click(function() {
+            alert("attr:" + $("a").attr("href"));
+        })
+    });
+</script>
+
+</html>
