@@ -1,0 +1,1 @@
+[jQuery手册:](http://jquery.cuishifeng.cn/)
