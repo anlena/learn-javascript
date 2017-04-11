@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: relative;
+        left: 30%;
+    }
+</style>
+
+<body>
+    <h3>$(selector).animate({params},speed,callback);</h3>
+    <div class="box1"></div>
+    <button class="bt1">多属性</button>
+    <button class="bt2">相对值</button>
+    <button class="bt3">预定义值</button>
+    <button class="bt4">使用队列</button>
+
+</body>
+
+<script>
+    $(function() {
+
+        //1.操作多个属性
+
+        $(".bt1").click(function() {
+            $(".box1").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            });
+        });
+
+        //2.使用相对值
+
+        $(".bt2").click(function() {
+            $(".box1").animate({
+                left: '400px',
+                height: '+=50px',
+                widht: '+=50px'
+            });
+        });
+
+        //3.使用预定义的值
+        $(".bt3").click(function() {
+            $(".box1").animate({
+                height: 'toogle',
+                widht: 'show',
+                height: 'hidden'
+            });
+        });
+
+        //4.使用队列功能
+        $(".bt4").click(function() {
+            var div = $(".box1");
+            div.animate({
+                height: '300px',
+                opacity: '0.4'
+            }, "slow");
+            div.animate({
+                width: '300px',
+                opacity: '0.8'
+            }, "slow");
+            div.animate({
+                height: '100px',
+                opacity: '0.4'
+            }, "slow");
+            div.animate({
+                width: '100px',
+                opacity: '0.8'
+            }, "slow");
+        })
+    });
+</script>
+
+</html>

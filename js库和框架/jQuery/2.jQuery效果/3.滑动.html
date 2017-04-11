@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <p style="display:none;">你在最底层，战略层面一定要弄好，想好你想要的y</p>
+    <p>你在最底层，战略层面一定要弄好，想好你想要的y</p>
     <h4>去找她啊</h4>
     <div>
         财富和感情都是自己去争取的。
     </div>
-    <h5>加油啊</h5>
+    <!--<h5>加油啊</h5>-->
     <button id="bt1">操作1</button>
     <button id="bt2">操作2</button>
     <button id="bt3">操作3</button>
@@ -23,6 +23,21 @@
 
 <script>
     $(function() {
+        $("#bt1").click(function() {
+            $("p").slideDown("slow");
+            $("h4").slideDown("slow");
+            $("div").slideDown(1000);
+        });
+        $("#bt2").click(function() {
+            $("p").slideUp("slow");
+            $("h4").slideUp("fast");
+            $("div").slideUp(1000);
+        });
+        $("#bt3").click(function() {
+            $("p").slideToggle("slow");
+            $("h4").slideToggle("fast");
+            $("div").slideToggle(1000);
+        })
 
     });
 </script>
