@@ -18,6 +18,7 @@
         <li>阿里</li>
         <li>百度</li>
     </ol>
+    <h3>你好啊！同志</h3>
     <button class="bt1">append</button>
     <button class="bt2">prepend</button>
     <button class="bt3">创建添加元素</button>
@@ -42,6 +43,19 @@
             var txt3 = document.createElement("p"); // Create with DOM
             txt3.innerHTML = "Text.";
             $("p").append(txt1, txt2, txt3);
+        });
+        $('.bt4').click(function() {
+            $('h3').before("嘻嘻")
+        });
+        $('.bt5').click(function() {
+            $('h3').after("<h1>哈哈哈</h1>")
+        });
+        $(".bt6").click(function() {
+            var txt1 = "<b>I</b>";
+            var txt2 = $("<i></i>").text("love");
+            var txt3 = document.createElement('span');
+            txt3.innerHTML = "you";
+            $("h3").before(txt1, txt2, txt3);
         })
     });
 </script>

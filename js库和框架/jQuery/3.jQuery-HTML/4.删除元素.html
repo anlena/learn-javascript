@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <ol id="a">
+        <li class="a1">阿里</li>
+        <li class="b1">百度</li>
+    </ol>
+    <ol id="b">
+        <li class="a2">阿里aa</li>
+        <li class="b2">百度bb</li>
+    </ol>
+    <ol id="c">
+        <li class="a3">阿里cc</li>
+        <li class="b3">百度dd</li>
+    </ol>
+    <button class="bt1">remove</button>
+    <button class="bt2">empty</button>
+    <button class="bt3">删除过滤元素</button>
+</body>
+
+<script>
+    $(function() {
+        $('.bt1').click(function() {
+            $("#a").remove();
+        });
+        $('.bt2').click(function() {
+            $("#b").empty();
+        });
+
+        //不是父元素，同级删除关系
+        $(".bt3").click(function() {
+            $("#c li").remove(".a3");
+        })
+    });
+</script>
+
+</html>
