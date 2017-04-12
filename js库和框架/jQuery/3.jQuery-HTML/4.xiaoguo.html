@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        .mainnav {
+            background: url(../images/mainnavbg.png) repeat-x;
+            /*height: 73px;*/
+            width: 100%;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .navwrap .navul {
+            width: 100%;
+            position: relative;
+            height: 100%;
+            float: left;
+            margin-left: 150px;
+        }
+        
+        .mainnav .navwrap {
+            width: 933px;
+            margin: 0 auto;
+            /*height: 73px;*/
+        }
+        
+        .mainnav li.navlist {
+            width: 150px;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .nav_bg {
+            background: #a24601;
+        }
+        
+        .mainnav a.nav_a {
+            padding: 10px 28px 0;
+            font-size: 17px;
+            color: #000;
+            text-align: center;
+        }
+        
+        .mainnav a span {
+            font-size: 13px;
+        }
+        
+        .downlist .navitem {
+            float: left;
+            height: 48px;
+            line-height: 48px;
+            margin: 0 18px;
+            border-bottom: 1px solid #7c3500;
+            padding: 0 18px;
+        }
+        
+        .downlist .lastitem {
+            border-bottom: none;
+        }
+        
+        .downlist {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 98.5%;
+            border: 1px solid #472201;
+            background-color: #ff7817;
+            z-index: 1;
+            display: none;
+        }
+        
+        .navitem a {
+            font-size: 18px;
+            color: #000;
+        }
+        
+        .navitem .dl_hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainnav">
+        <div class="navwrap">
+            <ul class="navul">
+                <li class="navlist"><a class="nav_a" href="index.html">首页</a></li>
+                <li class="navlist"><a class="nav_a" href="#dotwrap">奖励说明</a></li>
+                <li class="navlist"><a class="nav_a" href="#">人气投票</a></li>
+                <li class="navlist"><a class="nav_a" href="#">Q&amp;A</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    /**
+     * 动态添加导航下方的滑动条
+     */
+    var navul = document.getElementsByClassName('navul');
+    //创建div元素
+    var navBtn = document.createElement('div');
+    //设置css样式,注意transition:all
+    navBtn.style.cssText = 'position:absolute;width:0;bottom:3px;left:0;z-index:998;height:5px;background-color:#4486d4;' +
+        'box-shadow:0 0 3px #fff;transition:all .5s ease;'
+        //把创建的这个div添加到ul中
+    navul[0].appendChild(navBtn);
+    //获取里面的a元素
+    var nav_a = document.getElementsByClassName('nav_a');
+    var len = nav_a.length;
+    for (var i = 0; i < len; i++) {
+        //currentStyle:IE的选中样式。 getComputedStyle:FF的计算后样式
+        var style = nav_a[i].currentStyle || getComputedStyle(nav_a[i]);
+        //style.paddingLeft得到的值是带有'px'的，所以转换成Number类型
+        var pL = parseInt(style.paddingLeft, 10);
+        var pR = parseInt(style.paddingRight, 10)
+            //样式初始化
+        navBtn.style.width = (nav_a[0].offsetWidth - pL - pR) + 'px';
+        navBtn.style.left = (nav_a[0].offsetLeft + pL) + 'px';
+        //给当前对象添加事件。
+        nav_a[i].addEventListener('click', function() {
+            //this指的是当前的这个对象
+            navBtn.style.width = (this.offsetWidth - pL - pR) + 'px';
+            navBtn.style.left = (this.offsetParent.offsetLeft + pL) + 'px';
+        }, false);
+        // nav_a[i].addEventListener('mouseleave', function() {
+        //     navBtn.style.width = (nav_a[0].offsetWidth - pL - pR) + 'px';
+        //     navBtn.style.left = (nav_a[0].offsetLeft + pL) + 'px';
+        // }, false);
+    }
+</script>
+
+</html>

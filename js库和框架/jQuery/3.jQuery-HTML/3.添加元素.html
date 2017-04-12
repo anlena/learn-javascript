@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <p>派派玩的什么套路</p>
+    <p>要挑战QQ吗</p>
+    <ol>
+        <li>阿里</li>
+        <li>百度</li>
+    </ol>
+    <button class="bt1">append</button>
+    <button class="bt2">prepend</button>
+    <button class="bt3">创建添加元素</button>
+    <button class="bt4">after</button>
+    <button class="bt5">before</button>
+    <button class="bt6">before创建添加元素</button>
+</body>
+
+<script>
+    $(function() {
+        $(".bt1").click(function() {
+            $("p").append("<b>这是文字</b>");
+            $("ol").append("<li>追加列表项</li>");
+        });
+        $(".bt2").click(function() {
+            $("p").prepend("<b>这是文字</b>");
+            $("ol").append("<li>追加列表项</li>");
+        });
+        $(".bt3").click(function() {
+            var txt1 = "<p>Text.</p>"; // Create element with HTML  
+            var txt2 = $("<p></p>").text("Text."); // Create with jQuery
+            var txt3 = document.createElement("p"); // Create with DOM
+            txt3.innerHTML = "Text.";
+            $("p").append(txt1, txt2, txt3);
+        })
+    });
+</script>
+
+</html>
