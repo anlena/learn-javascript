@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    .important {
+        font-weight: bold;
+        font-size: xx-large;
+    }
+    
+    .blue {
+        color: blue;
+    }
+</style>
+
+<body>
+
+    <p>李达康书记</p>
+    <h3>沙润金通知</h3>
+    <a href="#">季检查长</a>
+    <div>
+        社会分化太严重
+    </div>
+
+    <button class="bt1">addClass</button>
+    <button class="bt2">removeClass</button>
+    <button class="bt3">toggleClass</button>
+
+    <h1>jQuery 拥有若干进行 CSS 操作的方法。我们将学习下面这些：</h1>
+    <ol>
+        <li>addClass() - 向被选元素添加一个或多个类</li>
+        <li>removeClass() - 从被选元素删除一个或多个类</li>
+        <li>toggleClass() - 对被选元素进行添加/删除类的切换操作</li>
+        <li>css() - 设置或返回样式属性</li>
+    </ol>
+</body>
+
+<script>
+    $(function() {
+        $(".bt1").click(function() {
+            $("p,h3").addClass("blue");
+            $("a").addClass("important");
+            $("div").addClass("blue important")
+        });
+        $(".bt2").click(function() {
+            $("p").removeClass("blue");
+        });
+        $(".bt3").click(function() {
+            $("p").toggleClass("blue");
+        })
+    });
+</script>
+
+</html>

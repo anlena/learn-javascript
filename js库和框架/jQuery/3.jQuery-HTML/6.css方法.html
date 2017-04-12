@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    p {
+        color: blue;
+    }
+</style>
+
+<body>
+
+    <p>李达康书记</p>
+    <h3>沙润金通知</h3>
+    <div>
+        社会分化太严重
+    </div>
+
+    <button class="bt1">获取css</button>
+    <button class="bt2">设置css</button>
+    <button class="bt3">批量设置css</button>
+</body>
+
+<script>
+    $(function() {
+
+        //获取css
+        $(".bt1").click(function() {
+            alert($("p").css("color"));
+        });
+
+        //设置css
+        $(".bt2").click(function() {
+            $("p").css("background-color", "green");
+        });
+
+        //批量设置css
+        $(".bt3").click(function() {
+            $("p").css({
+                "color": "red",
+                "border": "1px solid black"
+            });
+        });
+    });
+</script>
+
+</html>

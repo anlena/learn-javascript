@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+    
+    div,
+    ul,
+    ul li,
+    span {
+        border: 1px solid black;
+        margin: 20px 10px;
+    }
+    
+    span {
+        display: block;
+        width: 80%;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <ul>
+            <li><span></span></li>
+        </ul>
+    </div>
+
+    <button class="bt1">parent</button>
+    <button class="bt2">parents</button>
+    <button class="bt3">parentsUntil</button>
+
+    <h4>向上遍历 DOM 树 </h4>
+    <ol>
+        <li>parent()parent() 方法返回被选元素的直接父元素。 该方法只会向上一级对 DOM 树进行遍历。</li>
+        <li>parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (html)。</li>
+        <li>parentsUntil()parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。</li>
+    </ol>
+
+</body>
+
+<script>
+    $(function() {
+        $(".bt1").click(function() {
+            $("span").parent().css("border-color", "red");
+        });
+        $(".bt2").click(function() {
+            $("span").parents().css("border-color", "green");
+        });
+        $(".bt3").click(function() {
+            $("span").parentsUntil("div").css("border-color", "orange")
+        })
+    });
+</script>
+
+</html>
