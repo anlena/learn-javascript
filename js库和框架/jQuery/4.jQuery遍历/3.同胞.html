@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+    
+    div,
+    ul,
+    ul li,
+    span {
+        border: 1px solid black;
+        margin: 20px 10px;
+    }
+    
+    span {
+        display: block;
+        width: 80%;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <ul>
+            <li class="l1"><span class="s1">市委</span></li>
+            <li class="l2"><span class="s2">省委</span></li>
+            <li class="l3"><span class="s3">纪检委</span></li>
+            <li class="l4"><span class="s4">政法委</span></li>
+        </ul>
+    </div>
+
+    <button class="bt1">siblings</button>
+    <button class="bt2">next</button>
+    <button class="bt3">nextAll</button>
+    <button class="bt4">nextUntil()</button>
+
+    <h4>在 DOM 树中水平遍历</h4>
+    <ol>
+        <li>siblings() 方法返回被选元素的所有同胞元素。</li>
+        <li>next() 方法返回被选元素的下一个同胞元素。 该方法只返回一个元素。</li>
+        <li>nextAll() 方法返回被选元素的所有跟随的同胞元素。</li>
+        <li>nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。</li>
+        <li>prev()</li>
+        <li>prevAll()</li>
+        <li>prevUntil()</li>
+    </ol>
+
+</body>
+
+<script>
+    $(function() {
+        $(".bt1").click(function() {
+            $(".l2").siblings().css("border-color", "red");
+
+        });
+        $(".bt2").click(function() {
+            $(".l1").next().css("border-color", "green");
+
+        });
+        $(".bt3").click(function() {
+            $(".l1").nextAll().css("border-color", "orange");
+
+        });
+        $(".bt4").click(function() {
+            $('.l1').nextUntil(".l4").css("border-color", "blue");
+
+        })
+    });
+</script>
+
+</html>

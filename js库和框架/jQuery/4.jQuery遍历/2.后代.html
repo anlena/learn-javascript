@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+    
+    div,
+    ul,
+    ul li,
+    span {
+        border: 1px solid black;
+        margin: 20px 10px;
+    }
+    
+    span {
+        display: block;
+        width: 80%;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <ul>
+            <li class="l1"><span class="s1">市委</span></li>
+            <li><span class="s2">省委</span></li>
+        </ul>
+    </div>
+
+    <button class="bt1">children</button>
+    <button class="bt2">children过滤</button>
+    <button class="bt3">find</button>
+    <button class="bt4">find(all)</button>
+
+    <h4>向下遍历 DOM 树</h4>
+    <ol>
+        <li>children() 方法返回被选元素的所有直接子元素。 该方法只会向下一级对 DOM 树进行遍历。</li>
+        <li>find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。</li>
+    </ol>
+
+</body>
+
+<script>
+    $(function() {
+        $(".bt1").click(function() {
+            $("ul").children().css("border-color", "red");
+        });
+        $(".bt2").click(function() {
+            $("ul").children('.l1').css("border-color", "yellow");
+        });
+        $(".bt3").click(function() {
+            $("div").find(".s1").css("color", "red");
+        });
+        $(".bt4").click(function() {
+            $("div").find("*").css("border-color", 'green');
+        })
+    });
+</script>
+
+</html>

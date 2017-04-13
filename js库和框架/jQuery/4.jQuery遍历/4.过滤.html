@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    body {
+        background-color: gray;
+    }
+    
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+    
+    div,
+    ul,
+    ul li,
+    span {
+        border: 2px solid black;
+        margin: 20px 10px;
+    }
+    
+    span {
+        display: block;
+        width: 80%;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <ul>
+            <li class="l1"><span class="s1">市委</span></li>
+            <li class="l2"><span class="s2">省委</span></li>
+            <li class="l3"><span class="s3">纪检委</span></li>
+            <li class="l4"><span class="s4">政法委</span></li>
+        </ul>
+    </div>
+
+    <button class="bt1">first</button>
+    <button class="bt2">last</button>
+    <button class="bt3">eq</button>
+    <button class="bt4">filter</button>
+    <button class="bt5">not</button>
+
+    <h4>缩小搜索元素的范围</h4>
+    <p>三个最基本的过滤方法是：first(), last() 和 eq()，它们允许您基于其在一组元素中的位置来选择一个特定的元素。 其他过滤方法，比如 filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。</p>
+
+</body>
+
+<script>
+    $(function() {
+
+        //首个li的首个span
+        $(".bt1").click(function() {
+            $("li span").first().css("border-color", "red");
+        });
+
+        //li最后一个的最后一个span       
+        $(".bt2").click(function() {
+            $("li span").last().css("border-color", "orange");
+        });
+
+        //从0开始
+        $(".bt3").click(function() {
+            $("li").eq(3).css("border-color", "blue");
+        });
+        $(".bt4").click(function() {
+            $("li").filter(".l3").css("border-color", "yellow");
+        });
+        $(".bt5").click(function() {
+            $("li").not(".l3").css("border-color", "red");
+        })
+    });
+</script>
+
+</html>
