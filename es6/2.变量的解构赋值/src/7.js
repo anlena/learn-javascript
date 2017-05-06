@@ -165,11 +165,13 @@ var _iteratorError3 = undefined;
 
 try {
     for (var _iterator3 = map[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-        //...
-
         var _step3$value = _slicedToArray(_step3.value, 2),
             value = _step3$value[1];
     }
+    //...
+
+
+    //7.输入模块的指定方法
 } catch (err) {
     _didIteratorError3 = true;
     _iteratorError3 = err;
@@ -184,3 +186,7 @@ try {
         }
     }
 }
+
+var _require = require("source-map"),
+    SourceMapConsumer = _require.SourceMapConsumer,
+    SourceNode = _require.SourceNode;
