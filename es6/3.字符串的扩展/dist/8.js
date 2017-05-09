@@ -21,3 +21,10 @@
 'na'.repeat(-0.9) // ""
 
 // 参数NaN等同于0。
+
+'na'.repeat(NaN) // ""
+
+// 如果repeat的参数是字符串，则会先转换成数字。
+
+'na'.repeat('na') // ""
+'na'.repeat('3') // "nanana"
