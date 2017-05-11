@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+</body>
+<script>
+    //回调函数
+    // window.onload = function() {
+
+    //     function add(num1, num2, callback) {
+    //         var sum = num1 + num2;
+    //         callback(sum);
+    //     }
+
+    //     function print(num) {
+
+    //         console.log(num);
+    //     }
+    //     add(1, 2, print);
+    // }
+
+    //匿名回调函数
+
+    function add(num1, num2, callback) {
+        var sum = num1 + num2;
+        callback(sum);
+    }
+
+    add(1, 2, function(sum) {
+        console.log("hello");
+    })
+</script>
+
+</html>
