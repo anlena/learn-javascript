@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <script>
+        // 1.笨办法
+        var funcs = [];
+        // for (var i = 0; i < 3; i++) {
+        //     funcs[i] = function() {
+        //         console.log("i value is" + i);
+        //     };
+        // }
+
+        // for (var i = 0; i < 3; i++) {
+        //     funcs[i]();
+        // }
+
+        // 两种解决方式
+        // for (var i = 0; i < 3; i++) {
+        //     funcs[i] = (function(value) {
+        //         console.log("i value is " + i);
+        //     })(i);
+        // }
+
+        // let
+        for (let i = 0; i < 3; i++) {
+            funcs[i] = (function(value) {
+                console.log("i value is " + i);
+            })(i);
+        }
+    </script>
+</body>
+
+</html>
