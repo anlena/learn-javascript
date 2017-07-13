@@ -1,8 +1,11 @@
 'use strict';
 
-var _ref = ['JSpang'],
-    a = _ref[0],
-    _ref$ = _ref[1],
-    b = _ref$ === undefined ? '技术胖' : _ref$;
+var json = {
+    '0': 'jspang',
+    '1': '技术胖',
+    '2': '技术小子',
+    length: 3
+};
 
-console.log(a + b);
+var arr = Array.from(json);
+console.log(arr);
