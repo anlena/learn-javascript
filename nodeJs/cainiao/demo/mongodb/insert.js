@@ -27,5 +27,5 @@ MongoClient.connect(DB_CONN_STR, function(err, db) {
     insertData(db, function(result) {
         console.log(result);
         db.close();
-    })
-})
+    });
+});
