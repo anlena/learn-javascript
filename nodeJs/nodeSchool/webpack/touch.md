@@ -1,7 +1,0 @@
-:wink:
-
-:grin:
-
-:relaxed:
-
-​
